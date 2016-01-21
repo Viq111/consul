@@ -4,8 +4,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/hashicorp/consul/acl"
-	"github.com/hashicorp/consul/consul/structs"
+	"github.com/Viq111/consul/acl"
+	"github.com/Viq111/consul/consul/structs"
 )
 
 func TestFilterDirEnt(t *testing.T) {

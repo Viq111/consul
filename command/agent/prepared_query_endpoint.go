@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/hashicorp/consul/consul"
-	"github.com/hashicorp/consul/consul/structs"
+	"github.com/Viq111/consul/consul"
+	"github.com/Viq111/consul/consul/structs"
 )
 
 const (

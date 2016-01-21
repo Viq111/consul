@@ -8,8 +8,8 @@ import (
 	"time"
 
 	"github.com/armon/go-metrics"
-	"github.com/hashicorp/consul/consul/state"
-	"github.com/hashicorp/consul/consul/structs"
+	"github.com/Viq111/consul/consul/state"
+	"github.com/Viq111/consul/consul/structs"
 	"github.com/hashicorp/go-msgpack/codec"
 	"github.com/hashicorp/raft"
 )

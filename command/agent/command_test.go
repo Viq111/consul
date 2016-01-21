@@ -10,7 +10,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/hashicorp/consul/testutil"
+	"github.com/Viq111/consul/testutil"
 	"github.com/mitchellh/cli"
 )
 

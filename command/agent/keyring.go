@@ -8,7 +8,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/hashicorp/consul/consul/structs"
+	"github.com/Viq111/consul/consul/structs"
 	"github.com/hashicorp/memberlist"
 	"github.com/hashicorp/serf/serf"
 )

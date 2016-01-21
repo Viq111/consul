@@ -9,8 +9,8 @@ import (
 	"time"
 
 	"github.com/armon/go-metrics"
-	"github.com/hashicorp/consul/acl"
-	"github.com/hashicorp/consul/consul/structs"
+	"github.com/Viq111/consul/acl"
+	"github.com/Viq111/consul/consul/structs"
 	"github.com/hashicorp/golang-lru"
 )
 

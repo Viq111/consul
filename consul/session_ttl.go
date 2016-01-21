@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/armon/go-metrics"
-	"github.com/hashicorp/consul/consul/structs"
+	"github.com/Viq111/consul/consul/structs"
 )
 
 // initializeSessionTimers is used when a leader is newly elected to create

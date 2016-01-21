@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/hashicorp/consul/consul"
-	"github.com/hashicorp/consul/consul/structs"
+	"github.com/Viq111/consul/consul"
+	"github.com/Viq111/consul/consul/structs"
 )
 
 func TestSessionCreate(t *testing.T) {

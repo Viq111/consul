@@ -12,8 +12,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/hashicorp/consul/consul/structs"
-	"github.com/hashicorp/consul/testutil"
+	"github.com/Viq111/consul/consul/structs"
+	"github.com/Viq111/consul/testutil"
 	"github.com/hashicorp/go-cleanhttp"
 )
 

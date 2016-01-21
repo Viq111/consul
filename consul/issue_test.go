@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/hashicorp/consul/consul/structs"
+	"github.com/Viq111/consul/consul/structs"
 )
 
 // Testing for GH-300 and GH-279

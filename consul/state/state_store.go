@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/hashicorp/consul/consul/structs"
+	"github.com/Viq111/consul/consul/structs"
 	"github.com/hashicorp/go-memdb"
 	"github.com/hashicorp/serf/coordinate"
 )

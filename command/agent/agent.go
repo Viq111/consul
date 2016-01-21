@@ -15,9 +15,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/hashicorp/consul/consul"
-	"github.com/hashicorp/consul/consul/state"
-	"github.com/hashicorp/consul/consul/structs"
+	"github.com/Viq111/consul/consul"
+	"github.com/Viq111/consul/consul/state"
+	"github.com/Viq111/consul/consul/structs"
 	"github.com/hashicorp/serf/coordinate"
 	"github.com/hashicorp/serf/serf"
 )

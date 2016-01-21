@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/hashicorp/consul/testutil"
+	"github.com/Viq111/consul/testutil"
 )
 
 func TestPreparedQuery(t *testing.T) {

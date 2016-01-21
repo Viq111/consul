@@ -11,7 +11,7 @@ import (
 	"sync"
 
 	"github.com/armon/circbuf"
-	"github.com/hashicorp/consul/watch"
+	"github.com/Viq111/consul/watch"
 )
 
 const (
