@@ -7,9 +7,9 @@ import (
 	"log"
 	"time"
 
-	"github.com/armon/go-metrics"
 	"github.com/Viq111/consul/consul/state"
 	"github.com/Viq111/consul/consul/structs"
+	"github.com/armon/go-metrics"
 	"github.com/hashicorp/go-msgpack/codec"
 	"github.com/hashicorp/raft"
 )

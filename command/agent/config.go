@@ -21,13 +21,14 @@ import (
 // providing default ports, and allowing the addresses
 // to only be specified once
 type PortConfig struct {
-	DNS     int // DNS Query interface
-	HTTP    int // HTTP API
-	HTTPS   int // HTTPS API
-	RPC     int // CLI RPC
-	SerfLan int `mapstructure:"serf_lan"` // LAN gossip (Client + Server)
-	SerfWan int `mapstructure:"serf_wan"` // WAN gossip (Server only)
-	Server  int // Server internal RPC
+	BindServer int // BindServer binds internal RPC
+	DNS        int // DNS Query interface
+	HTTP       int // HTTP API
+	HTTPS      int // HTTPS API
+	RPC        int // CLI RPC
+	SerfLan    int `mapstructure:"serf_lan"` // LAN gossip (Client + Server)
+	SerfWan    int `mapstructure:"serf_wan"` // WAN gossip (Server only)
+	Server     int // Server internal RPC
 }
 
 // AddressConfig is used to provide address overrides
@@ -492,13 +493,14 @@ func DefaultConfig() *Config {
 		ClientAddr:      "127.0.0.1",
 		BindAddr:        "0.0.0.0",
 		Ports: PortConfig{
-			DNS:     8600,
-			HTTP:    8500,
-			HTTPS:   -1,
-			RPC:     8400,
-			SerfLan: consul.DefaultLANSerfPort,
-			SerfWan: consul.DefaultWANSerfPort,
-			Server:  8300,
+			BindServer: 8300,
+			DNS:        8600,
+			HTTP:       8500,
+			HTTPS:      -1,
+			RPC:        8400,
+			SerfLan:    consul.DefaultLANSerfPort,
+			SerfWan:    consul.DefaultWANSerfPort,
+			Server:     8300,
 		},
 		DNSConfig: DNSConfig{
 			MaxStale: 5 * time.Second,
@@ -1011,6 +1013,9 @@ func MergeConfig(a, b *Config) *Config {
 	}
 	if b.Ports.Server != 0 {
 		result.Ports.Server = b.Ports.Server
+	}
+	if b.Ports.BindServer != 0 {
+		result.Ports.BindServer = b.Ports.BindServer
 	}
 	if b.Addresses.DNS != "" {
 		result.Addresses.DNS = b.Addresses.DNS

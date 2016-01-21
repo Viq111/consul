@@ -276,7 +276,7 @@ func (a *Agent) consulConfig() *consul.Config {
 		}
 		base.RPCAdvertise = &net.TCPAddr{
 			IP:   net.ParseIP(a.config.AdvertiseAddr),
-			Port: a.config.Ports.Server,
+			Port: a.config.Ports.BindServer,
 		}
 	}
 	if a.config.AdvertiseAddrs.SerfLan != nil {

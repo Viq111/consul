@@ -9,9 +9,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/armon/go-metrics"
 	"github.com/Viq111/consul/consul"
 	"github.com/Viq111/consul/consul/structs"
+	"github.com/armon/go-metrics"
 	"github.com/miekg/dns"
 )
 

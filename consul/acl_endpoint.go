@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/armon/go-metrics"
 	"github.com/Viq111/consul/acl"
 	"github.com/Viq111/consul/consul/structs"
+	"github.com/armon/go-metrics"
 )
 
 // ACL endpoint is used to manipulate ACLs

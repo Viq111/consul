@@ -10,8 +10,8 @@ import (
 	"strconv"
 	"sync"
 
-	"github.com/armon/circbuf"
 	"github.com/Viq111/consul/watch"
+	"github.com/armon/circbuf"
 )
 
 const (
