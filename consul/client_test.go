@@ -20,9 +20,11 @@ func testClientConfig(t *testing.T, NodeName string) (string, *Config) {
 	config.Datacenter = "dc1"
 	config.DataDir = dir
 	config.NodeName = NodeName
+	port := getPort()
+	config.AdvertisePort = port
 	config.RPCAddr = &net.TCPAddr{
 		IP:   []byte{127, 0, 0, 1},
-		Port: getPort(),
+		Port: port,
 	}
 	config.SerfLANConfig.MemberlistConfig.BindAddr = "127.0.0.1"
 	config.SerfLANConfig.MemberlistConfig.BindPort = getPort()

@@ -252,7 +252,7 @@ func NewServer(config *Config) (*Server, error) {
 	}
 
 	// Initialize the lan Serf
-	s.serfLAN, err = s.setupSerf(config.SerfLANConfig,
+	s.serfLAN, err = s.setupSerf(config, config.SerfLANConfig,
 		s.eventChLAN, serfLANSnapshot, false)
 	if err != nil {
 		s.Shutdown()
@@ -261,7 +261,7 @@ func NewServer(config *Config) (*Server, error) {
 	go s.lanEventHandler()
 
 	// Initialize the wan Serf
-	s.serfWAN, err = s.setupSerf(config.SerfWANConfig,
+	s.serfWAN, err = s.setupSerf(config, config.SerfWANConfig,
 		s.eventChWAN, serfWANSnapshot, true)
 	if err != nil {
 		s.Shutdown()
@@ -278,8 +278,7 @@ func NewServer(config *Config) (*Server, error) {
 }
 
 // setupSerf is used to setup and initialize a Serf
-func (s *Server) setupSerf(conf *serf.Config, ch chan serf.Event, path string, wan bool) (*serf.Serf, error) {
-	addr := s.rpcListener.Addr().(*net.TCPAddr)
+func (s *Server) setupSerf(consulConf *Config, conf *serf.Config, ch chan serf.Event, path string, wan bool) (*serf.Serf, error) {
 	conf.Init()
 	if wan {
 		conf.NodeName = fmt.Sprintf("%s.%s", s.config.NodeName, s.config.Datacenter)
@@ -292,7 +291,7 @@ func (s *Server) setupSerf(conf *serf.Config, ch chan serf.Event, path string, w
 	conf.Tags["vsn_min"] = fmt.Sprintf("%d", ProtocolVersionMin)
 	conf.Tags["vsn_max"] = fmt.Sprintf("%d", ProtocolVersionMax)
 	conf.Tags["build"] = s.config.Build
-	conf.Tags["port"] = fmt.Sprintf("%d", addr.Port)
+	conf.Tags["port"] = fmt.Sprintf("%d", consulConf.AdvertisePort)
 	if s.config.Bootstrap {
 		conf.Tags["bootstrap"] = "1"
 	}

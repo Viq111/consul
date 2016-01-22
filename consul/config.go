@@ -66,6 +66,9 @@ type Config struct {
 	// RaftConfig is the configuration used for Raft in the local DC
 	RaftConfig *raft.Config
 
+	// AdvertisePort is the port we are gonna advertise our server
+	AdvertisePort int
+
 	// RPCAddr is the RPC address used by Consul. This should be reachable
 	// by the WAN and LAN
 	RPCAddr *net.TCPAddr
@@ -267,6 +270,7 @@ func DefaultConfig() *Config {
 		Datacenter:              DefaultDC,
 		NodeName:                hostname,
 		RPCAddr:                 DefaultRPCAddr,
+		AdvertisePort:           8300,
 		RaftConfig:              raft.DefaultConfig(),
 		SerfLANConfig:           serf.DefaultConfig(),
 		SerfWANConfig:           serf.DefaultConfig(),

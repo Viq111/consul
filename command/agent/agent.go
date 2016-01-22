@@ -267,6 +267,8 @@ func (a *Agent) consulConfig() *consul.Config {
 		}
 		base.RPCAddr = bindAddr
 	}
+	base.AdvertisePort = a.config.Ports.BindServer
+
 	if a.config.AdvertiseAddr != "" {
 		base.SerfLANConfig.MemberlistConfig.AdvertiseAddr = a.config.AdvertiseAddr
 		if a.config.AdvertiseAddrWan != "" {

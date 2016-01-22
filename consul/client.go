@@ -113,7 +113,7 @@ func NewClient(config *Config) (*Client, error) {
 	go c.lanEventHandler()
 
 	// Initialize the lan Serf
-	c.serf, err = c.setupSerf(config.SerfLANConfig,
+	c.serf, err = c.setupSerf(config, config.SerfLANConfig,
 		c.eventCh, serfLANSnapshot)
 	if err != nil {
 		c.Shutdown()
@@ -123,7 +123,7 @@ func NewClient(config *Config) (*Client, error) {
 }
 
 // setupSerf is used to setup and initialize a Serf
-func (c *Client) setupSerf(conf *serf.Config, ch chan serf.Event, path string) (*serf.Serf, error) {
+func (c *Client) setupSerf(consulConf *Config, conf *serf.Config, ch chan serf.Event, path string) (*serf.Serf, error) {
 	conf.Init()
 	conf.NodeName = c.config.NodeName
 	conf.Tags["role"] = "node"
