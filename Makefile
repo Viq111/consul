@@ -35,7 +35,7 @@ updatedeps: deps
 	go get -u -v $(GOTOOLS)
 	go list ./... \
 		| xargs go list -f '{{join .Deps "\n"}}' \
-		| grep -v github.com/hashicorp/consul \
+		| grep -v github.com/Viq111/consul \
 		| grep -v '/internal/' \
 		| sort -u \
 		| xargs go get -f -u -v

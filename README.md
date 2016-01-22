@@ -1,4 +1,4 @@
-# Consul [![Build Status](https://travis-ci.org/hashicorp/consul.png)](https://travis-ci.org/hashicorp/consul)
+# Consul [![Build Status](https://travis-ci.org/Viq111/consul.png)](https://travis-ci.org/Viq111/consul)
 
 * Website: https://www.consul.io
 * IRC: `#consul` on Freenode
@@ -46,7 +46,7 @@ If you wish to work on Consul itself, you'll first need [Go](https://golang.org)
 installed (version 1.5.1+ is _required_). Make sure you have Go properly installed,
 including setting up your [GOPATH](https://golang.org/doc/code.html#GOPATH).
 
-Next, clone this repository into `$GOPATH/src/github.com/hashicorp/consul` and
+Next, clone this repository into `$GOPATH/src/github.com/Viq111/consul` and
 then just type `make`. In a few moments, you'll have a working `consul` executable:
 
 ```
