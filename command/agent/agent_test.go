@@ -38,7 +38,7 @@ func nextConfig() *Config {
 	conf.Ports.SerfLan = 18200 + idx
 	conf.Ports.SerfWan = 18400 + idx
 	conf.Ports.Server = 18000 + idx
-	conf.Ports.BindServer = 18000 + idx
+	conf.Ports.AdvertiseServer = 18000 + idx
 	conf.Server = true
 	conf.ACLDatacenter = "dc1"
 	conf.ACLMasterToken = "root"

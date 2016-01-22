@@ -108,7 +108,7 @@ func nextConfig() *agent.Config {
 	conf.Ports.SerfLan = 10201 + 10*idx
 	conf.Ports.SerfWan = 10202 + 10*idx
 	conf.Ports.Server = 10300 + 10*idx
-	conf.Ports.BindServer = 10300 + 10*idx
+	conf.Ports.AdvertiseServer = 10300 + 10*idx
 
 	cons := consul.DefaultConfig()
 	conf.ConsulConfig = cons

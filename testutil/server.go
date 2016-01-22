@@ -35,13 +35,13 @@ var offset uint64
 // TestPortConfig configures the various ports used for services
 // provided by the Consul server.
 type TestPortConfig struct {
-	BindServer int `json:"BindServer,omitempty"`
-	DNS        int `json:"dns,omitempty"`
-	HTTP       int `json:"http,omitempty"`
-	RPC        int `json:"rpc,omitempty"`
-	SerfLan    int `json:"serf_lan,omitempty"`
-	SerfWan    int `json:"serf_wan,omitempty"`
-	Server     int `json:"server,omitempty"`
+	AdvertiseServer int `json:"AdvertiseServer,omitempty"`
+	DNS             int `json:"dns,omitempty"`
+	HTTP            int `json:"http,omitempty"`
+	RPC             int `json:"rpc,omitempty"`
+	SerfLan         int `json:"serf_lan,omitempty"`
+	SerfWan         int `json:"serf_wan,omitempty"`
+	Server          int `json:"server,omitempty"`
 }
 
 // TestAddressConfig contains the bind addresses for various
@@ -86,13 +86,13 @@ func defaultServerConfig() *TestServerConfig {
 		Bind:              "127.0.0.1",
 		Addresses:         &TestAddressConfig{},
 		Ports: &TestPortConfig{
-			BindServer: 25000 + idx,
-			DNS:        20000 + idx,
-			HTTP:       21000 + idx,
-			RPC:        22000 + idx,
-			SerfLan:    23000 + idx,
-			SerfWan:    24000 + idx,
-			Server:     25000 + idx,
+			AdvertiseServer: 25000 + idx,
+			DNS:             20000 + idx,
+			HTTP:            21000 + idx,
+			RPC:             22000 + idx,
+			SerfLan:         23000 + idx,
+			SerfWan:         24000 + idx,
+			Server:          25000 + idx,
 		},
 	}
 }

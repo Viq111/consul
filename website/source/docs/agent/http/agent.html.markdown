@@ -140,7 +140,7 @@ It returns a JSON body like this:
     "BindAddr": "0.0.0.0",
     "AdvertiseAddr": "10.1.10.12",
     "Ports": {
-      "BindServer": 8300,
+      "AdvertiseServer": 8300,
       "DNS": 8600,
       "HTTP": 8500,
       "RPC": 8400,
