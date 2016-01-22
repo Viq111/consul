@@ -17,8 +17,8 @@ GIT_DIRTY=$(test -n "`git status --porcelain`" && echo "+CHANGES" || true)
 GIT_DESCRIBE=$(git describe --tags)
 
 # Determine the arch/os combos we're building for
-XC_ARCH=${XC_ARCH:-"386 amd64 arm"}
-XC_OS=${XC_OS:-"solaris darwin freebsd linux windows"}
+XC_ARCH=${XC_ARCH:-"amd64"}
+XC_OS=${XC_OS:-"darwin linux windows"}
 
 # Install dependencies
 echo "==> Getting dependencies..."
