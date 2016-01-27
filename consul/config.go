@@ -38,6 +38,9 @@ func init() {
 
 // Config is used to configure the server
 type Config struct {
+	// BindRPCAddr if defined will override our bind port for RPCAddr
+	BindRPCAddr *net.TCPAddr
+
 	// Bootstrap mode is used to bring up the first Consul server.
 	// It is required so that it can elect a leader without any
 	// other nodes being present

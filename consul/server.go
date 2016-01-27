@@ -279,7 +279,7 @@ func NewServer(config *Config) (*Server, error) {
 
 // setupSerf is used to setup and initialize a Serf
 func (s *Server) setupSerf(conf *serf.Config, ch chan serf.Event, path string, wan bool) (*serf.Serf, error) {
-	addr := s.rpcListener.Addr().(*net.TCPAddr)
+	addr := s.config.RPCAddr
 	conf.Init()
 	if wan {
 		conf.NodeName = fmt.Sprintf("%s.%s", s.config.NodeName, s.config.Datacenter)
@@ -451,7 +451,12 @@ func (s *Server) setupRPC(tlsWrap tlsutil.DCWrapper) error {
 	s.rpcServer.Register(s.endpoints.Coordinate)
 	s.rpcServer.Register(s.endpoints.PreparedQuery)
 
-	list, err := net.ListenTCP("tcp", s.config.RPCAddr)
+	bindAddr := s.config.RPCAddr
+	if s.config.BindRPCAddr != nil {
+		bindAddr = s.config.BindRPCAddr
+	}
+
+	list, err := net.ListenTCP("tcp", bindAddr)
 	if err != nil {
 		return err
 	}
@@ -461,7 +466,7 @@ func (s *Server) setupRPC(tlsWrap tlsutil.DCWrapper) error {
 	if s.config.RPCAdvertise != nil {
 		advertise = s.config.RPCAdvertise
 	} else {
-		advertise = s.rpcListener.Addr()
+		advertise = s.config.RPCAddr
 	}
 
 	// Verify that we have a usable advertise address
