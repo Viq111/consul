@@ -12,9 +12,9 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/Viq111/consul/consul/structs"
 	"github.com/armon/circbuf"
 	docker "github.com/fsouza/go-dockerclient"
-	"github.com/hashicorp/consul/consul/structs"
 	"github.com/hashicorp/go-cleanhttp"
 )
 

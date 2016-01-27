@@ -2,7 +2,7 @@ package agent
 
 import (
 	"fmt"
-	"github.com/hashicorp/consul/consul/structs"
+	"github.com/Viq111/consul/consul/structs"
 	"net/http"
 	"strings"
 )

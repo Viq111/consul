@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/hashicorp/consul",
+	"ImportPath": "github.com/Viq111/consul",
 	"GoVersion": "go1.4.2",
 	"Deps": [
 		{
@@ -24,7 +24,7 @@
 			"Rev": "2c04100eb9793f2b8541d243494e2909d2112325"
 		},
 		{
-			"ImportPath": "github.com/hashicorp/consul-migrate/migrator",
+			"ImportPath": "github.com/Viq111/consul-migrate/migrator",
 			"Comment": "v0.1.0",
 			"Rev": "4977886fc950a0db1a6f0bbadca56dfabf170f9c"
 		},

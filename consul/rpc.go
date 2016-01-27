@@ -9,9 +9,9 @@ import (
 	"strings"
 	"time"
 
+	"github.com/Viq111/consul/consul/state"
+	"github.com/Viq111/consul/consul/structs"
 	"github.com/armon/go-metrics"
-	"github.com/hashicorp/consul/consul/state"
-	"github.com/hashicorp/consul/consul/structs"
 	"github.com/hashicorp/memberlist"
 	"github.com/hashicorp/net-rpc-msgpackrpc"
 	"github.com/hashicorp/yamux"

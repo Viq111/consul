@@ -9,8 +9,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/hashicorp/consul/consul/structs"
-	"github.com/hashicorp/consul/testutil"
+	"github.com/Viq111/consul/consul/structs"
+	"github.com/Viq111/consul/testutil"
 )
 
 func TestKVSEndpoint_PUT_GET_DELETE(t *testing.T) {

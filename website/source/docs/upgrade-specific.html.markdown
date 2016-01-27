@@ -29,9 +29,9 @@ instead a safeguard has been put in place which will prevent Consul from booting
 if the old directory format is detected.
 
 It is still possible to migrate from a 0.5.x version of Consul to 0.6+ using the
-[consul-migrate](https://github.com/hashicorp/consul-migrate) CLI utility. This
+[consul-migrate](https://github.com/Viq111/consul-migrate) CLI utility. This
 is the same tool that was previously embedded into Consul. See the
-[releases](https://github.com/hashicorp/consul-migrate/releases) page for
+[releases](https://github.com/Viq111/consul-migrate/releases) page for
 downloadable versions of the tool.
 
 Also, in this release Consul switched from LMDB to a fully in-memory database for
@@ -116,7 +116,7 @@ this:
 ```
 
 This automatic upgrade will only exist in Consul 0.5.1+ and it will
-be removed starting with Consul 0.6.0+. It will still be possible to upgrade directly 
+be removed starting with Consul 0.6.0+. It will still be possible to upgrade directly
 from pre-0.5.1 versions by using the consul-migrate utility, which is available on the
 [Consul Tools page](/downloads_tools.html).
 

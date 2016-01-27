@@ -13,9 +13,9 @@ import (
 	"testing"
 	"time"
 
+	"github.com/Viq111/consul/consul/structs"
+	"github.com/Viq111/consul/testutil"
 	docker "github.com/fsouza/go-dockerclient"
-	"github.com/hashicorp/consul/consul/structs"
-	"github.com/hashicorp/consul/testutil"
 )
 
 type MockNotify struct {

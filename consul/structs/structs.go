@@ -7,7 +7,7 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/hashicorp/consul/acl"
+	"github.com/Viq111/consul/acl"
 	"github.com/hashicorp/go-msgpack/codec"
 	"github.com/hashicorp/serf/coordinate"
 )

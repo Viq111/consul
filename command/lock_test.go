@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/hashicorp/consul/api"
+	"github.com/Viq111/consul/api"
 	"github.com/mitchellh/cli"
 )
 

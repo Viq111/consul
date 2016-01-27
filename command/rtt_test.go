@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/hashicorp/consul/command/agent"
-	"github.com/hashicorp/consul/consul/structs"
+	"github.com/Viq111/consul/command/agent"
+	"github.com/Viq111/consul/consul/structs"
 	"github.com/hashicorp/serf/coordinate"
 	"github.com/mitchellh/cli"
 )

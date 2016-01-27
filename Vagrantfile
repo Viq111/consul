@@ -47,7 +47,7 @@ SCRIPT
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision 'shell', inline: @script, privileged: false
-  config.vm.synced_folder '.', '/opt/gopath/src/github.com/hashicorp/consul'
+  config.vm.synced_folder '.', '/opt/gopath/src/github.com/Viq111/consul'
 
   %w[vmware_fusion vmware_workstation].each do |p|
     config.vm.provider p do |v|

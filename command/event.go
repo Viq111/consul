@@ -6,7 +6,7 @@ import (
 	"regexp"
 	"strings"
 
-	consulapi "github.com/hashicorp/consul/api"
+	consulapi "github.com/Viq111/consul/api"
 	"github.com/mitchellh/cli"
 )
 

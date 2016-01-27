@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/Viq111/consul/consul/structs"
 	"github.com/armon/go-metrics"
-	"github.com/hashicorp/consul/consul/structs"
 )
 
 // Catalog endpoint is used to manipulate the service catalog

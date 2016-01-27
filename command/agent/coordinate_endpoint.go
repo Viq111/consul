@@ -1,7 +1,7 @@
 package agent
 
 import (
-	"github.com/hashicorp/consul/consul/structs"
+	"github.com/Viq111/consul/consul/structs"
 	"net/http"
 	"sort"
 )
