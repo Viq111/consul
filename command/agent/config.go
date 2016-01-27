@@ -22,6 +22,7 @@ import (
 // to only be specified once
 type PortConfig struct {
 	AdvertiseServer int // AdvertiseServer binds internal RPC
+	BindHTTP        int // Where to bind the HTTP server
 	DNS             int // DNS Query interface
 	HTTP            int // HTTP API
 	HTTPS           int // HTTPS API
@@ -993,6 +994,12 @@ func MergeConfig(a, b *Config) *Config {
 	if b.Services != nil {
 		result.Services = append(result.Services, b.Services...)
 	}
+	if b.Ports.AdvertiseServer != 0 {
+		result.Ports.AdvertiseServer = b.Ports.AdvertiseServer
+	}
+	if b.Ports.BindHTTP != 0 {
+		result.Ports.BindHTTP = b.Ports.BindHTTP
+	}
 	if b.Ports.DNS != 0 {
 		result.Ports.DNS = b.Ports.DNS
 	}
@@ -1013,9 +1020,6 @@ func MergeConfig(a, b *Config) *Config {
 	}
 	if b.Ports.Server != 0 {
 		result.Ports.Server = b.Ports.Server
-	}
-	if b.Ports.AdvertiseServer != 0 {
-		result.Ports.AdvertiseServer = b.Ports.AdvertiseServer
 	}
 	if b.Addresses.DNS != "" {
 		result.Addresses.DNS = b.Addresses.DNS
