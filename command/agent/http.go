@@ -108,15 +108,15 @@ func NewHTTPServers(agent *Agent, config *Config, logOutput io.Writer) ([]*HTTPS
 		}
 
 		bindPort := config.Ports.HTTP
- 		if config.Ports.BindHTTP != 0 {
- 			bindPort = config.Ports.BindHTTP
- 		}
+		if config.Ports.BindHTTP != 0 {
+			bindPort = config.Ports.BindHTTP
+		}
 
- 		bindAddr, err := config.ClientListener(config.Addresses.HTTP, bindPort)
- 		if err != nil {
- 			return nil, fmt.Errorf("Failed to get ClientListener address:port (%v): %v", bindPort, err)
- 		}
- 		ln, err := net.Listen(bindAddr.Network(), bindAddr.String())
+		bindAddr, err := config.ClientListener(config.Addresses.HTTP, bindPort)
+		if err != nil {
+			return nil, fmt.Errorf("Failed to get ClientListener address:port (%v): %v", bindPort, err)
+		}
+		ln, err := net.Listen(bindAddr.Network(), bindAddr.String())
 		if err != nil {
 			return nil, fmt.Errorf("Failed to get Listen on %s: %v", httpAddr.String(), err)
 		}

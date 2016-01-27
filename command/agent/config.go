@@ -21,15 +21,16 @@ import (
 // providing default ports, and allowing the addresses
 // to only be specified once
 type PortConfig struct {
-	BindHTTP   int // HTTP API where to bind
-	BindServer int // Server internal RPC where to bind
-	DNS        int // DNS Query interface
-	HTTP       int // HTTP API
-	HTTPS      int // HTTPS API
-	RPC        int // CLI RPC
-	SerfLan    int `mapstructure:"serf_lan"` // LAN gossip (Client + Server)
-	SerfWan    int `mapstructure:"serf_wan"` // WAN gossip (Server only)
-	Server     int // Server internal RPC
+	AdvertiseSerfLan int // LAN gossip to advertise
+	BindHTTP         int // HTTP API where to bind
+	BindServer       int // Server internal RPC where to bind
+	DNS              int // DNS Query interface
+	HTTP             int // HTTP API
+	HTTPS            int // HTTPS API
+	RPC              int // CLI RPC
+	SerfLan          int `mapstructure:"serf_lan"` // LAN gossip (Client + Server)
+	SerfWan          int `mapstructure:"serf_wan"` // WAN gossip (Server only)
+	Server           int // Server internal RPC
 }
 
 // AddressConfig is used to provide address overrides
@@ -993,9 +994,12 @@ func MergeConfig(a, b *Config) *Config {
 	if b.Services != nil {
 		result.Services = append(result.Services, b.Services...)
 	}
+	if b.Ports.AdvertiseSerfLan != 0 {
+		result.Ports.AdvertiseSerfLan = b.Ports.AdvertiseSerfLan
+	}
 	if b.Ports.BindHTTP != 0 {
-  		result.Ports.BindHTTP = b.Ports.BindHTTP
-  	}
+		result.Ports.BindHTTP = b.Ports.BindHTTP
+	}
 	if b.Ports.BindServer != 0 {
 		result.Ports.BindServer = b.Ports.BindServer
 	}
