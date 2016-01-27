@@ -262,7 +262,7 @@ func (a *Agent) consulConfig() *consul.Config {
 	}
 	if a.config.Ports.SerfWan != 0 {
 		base.SerfWANConfig.MemberlistConfig.BindPort = a.config.Ports.SerfWan
-		base.SerfWANConfig.MemberlistConfig.AdvertisePort = a.config.Ports.SerfWan
+		base.SerfWANConfig.MemberlistConfig.AdvertisePort = 1
 	}
 	if a.config.BindAddr != "" {
 		bindAddr := &net.TCPAddr{
@@ -287,11 +287,9 @@ func (a *Agent) consulConfig() *consul.Config {
 	}
 	if a.config.AdvertiseAddrs.SerfLan != nil {
 		base.SerfLANConfig.MemberlistConfig.AdvertiseAddr = a.config.AdvertiseAddrs.SerfLan.IP.String()
-		base.SerfLANConfig.MemberlistConfig.AdvertisePort = a.config.AdvertiseAddrs.SerfLan.Port
 	}
 	if a.config.AdvertiseAddrs.SerfWan != nil {
 		base.SerfWANConfig.MemberlistConfig.AdvertiseAddr = a.config.AdvertiseAddrs.SerfWan.IP.String()
-		base.SerfWANConfig.MemberlistConfig.AdvertisePort = a.config.AdvertiseAddrs.SerfWan.Port
 	}
 	if a.config.AdvertiseAddrs.RPC != nil {
 		base.RPCAdvertise = a.config.AdvertiseAddrs.RPC
