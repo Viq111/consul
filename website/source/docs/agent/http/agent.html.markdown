@@ -141,6 +141,7 @@ It returns a JSON body like this:
     "AdvertiseAddr": "10.1.10.12",
     "Ports": {
       "AdvertiseServer": 8300,
+      "BindHTTP": 8500,
       "DNS": 8600,
       "HTTP": 8500,
       "RPC": 8400,

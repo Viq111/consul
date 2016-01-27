@@ -36,6 +36,7 @@ var offset uint64
 // provided by the Consul server.
 type TestPortConfig struct {
 	AdvertiseServer int `json:"AdvertiseServer,omitempty"`
+	BindHTTP        int `json:"BindHTTP,omitempty"`
 	DNS             int `json:"dns,omitempty"`
 	HTTP            int `json:"http,omitempty"`
 	RPC             int `json:"rpc,omitempty"`
@@ -87,6 +88,7 @@ func defaultServerConfig() *TestServerConfig {
 		Addresses:         &TestAddressConfig{},
 		Ports: &TestPortConfig{
 			AdvertiseServer: 25000 + idx,
+			BindHTTP:        21000 + idx,
 			DNS:             20000 + idx,
 			HTTP:            21000 + idx,
 			RPC:             22000 + idx,

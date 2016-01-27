@@ -1215,6 +1215,7 @@ func TestMergeConfig(t *testing.T) {
 		AdvertiseAddrWan: "127.0.0.2",
 		Ports: PortConfig{
 			AdvertiseServer: 1,
+			BindHTTP:        3,
 			DNS:             2,
 			HTTP:            3,
 			RPC:             4,
