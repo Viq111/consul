@@ -35,14 +35,15 @@ var offset uint64
 // TestPortConfig configures the various ports used for services
 // provided by the Consul server.
 type TestPortConfig struct {
-	AdvertiseServer int `json:"AdvertiseServer,omitempty"`
-	BindHTTP        int `json:"BindHTTP,omitempty"`
-	DNS             int `json:"dns,omitempty"`
-	HTTP            int `json:"http,omitempty"`
-	RPC             int `json:"rpc,omitempty"`
-	SerfLan         int `json:"serf_lan,omitempty"`
-	SerfWan         int `json:"serf_wan,omitempty"`
-	Server          int `json:"server,omitempty"`
+	AdvertiseSerfLan int `json:"AdvertiseSerfLan,omitempty"`
+	AdvertiseServer  int `json:"AdvertiseServer,omitempty"`
+	BindHTTP         int `json:"BindHTTP,omitempty"`
+	DNS              int `json:"dns,omitempty"`
+	HTTP             int `json:"http,omitempty"`
+	RPC              int `json:"rpc,omitempty"`
+	SerfLan          int `json:"serf_lan,omitempty"`
+	SerfWan          int `json:"serf_wan,omitempty"`
+	Server           int `json:"server,omitempty"`
 }
 
 // TestAddressConfig contains the bind addresses for various

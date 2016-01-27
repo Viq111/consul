@@ -254,7 +254,11 @@ func (a *Agent) consulConfig() *consul.Config {
 	}
 	if a.config.Ports.SerfLan != 0 {
 		base.SerfLANConfig.MemberlistConfig.BindPort = a.config.Ports.SerfLan
-		base.SerfLANConfig.MemberlistConfig.AdvertisePort = a.config.Ports.SerfLan
+		if a.config.Ports.AdvertiseSerfLan != 0 {
+			base.SerfLANConfig.MemberlistConfig.AdvertisePort = a.config.Ports.AdvertiseSerfLan
+		} else {
+			base.SerfLANConfig.MemberlistConfig.AdvertisePort = a.config.Ports.SerfLan
+		}
 	}
 	if a.config.Ports.SerfWan != 0 {
 		base.SerfWANConfig.MemberlistConfig.BindPort = a.config.Ports.SerfWan

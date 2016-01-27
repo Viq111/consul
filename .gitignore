@@ -4,6 +4,8 @@
 *.so
 .DS_Store
 Thumbs.db
+*.sublime-project
+*.sublime-workspace
 
 # Folders
 _obj
