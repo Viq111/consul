@@ -188,7 +188,7 @@ func Create(config *Config, logOutput io.Writer) (*Agent, error) {
 		consulService := structs.NodeService{
 			Service: consul.ConsulServiceName,
 			ID:      consul.ConsulServiceID,
-			Port:    agent.config.Ports.Server,
+			Port:    agent.config.Ports.AdvertiseServer,
 			Tags:    []string{},
 		}
 		agent.state.AddService(&consulService, "")
