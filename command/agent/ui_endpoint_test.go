@@ -45,7 +45,7 @@ func TestUiIndex(t *testing.T) {
 		t.Fatalf("err: %v", err)
 	}
 	req.URL.Scheme = "http"
-	req.URL.Host = srv.listener.Addr().String()
+	req.URL.Host = srv.addr
 
 	// Make the request
 	client := cleanhttp.DefaultClient()
