@@ -107,7 +107,13 @@ func NewHTTPServers(agent *Agent, config *Config, logOutput io.Writer) ([]*HTTPS
 			}
 		}
 
-		ln, err := net.Listen(httpAddr.Network(), httpAddr.String())
+		bindPort := config.Ports.HTTP
+		if config.Ports.BindHTTP != 0 {
+			bindPort = config.Ports.BindHTTP
+		}
+
+		bindAddr := &net.TCPAddr{IP: httpAddr.IP, Port: bindPort}
+		ln, err := net.Listen(bindAddr.Network(), bindAddr.String())
 		if err != nil {
 			return nil, fmt.Errorf("Failed to get Listen on %s: %v", httpAddr.String(), err)
 		}
